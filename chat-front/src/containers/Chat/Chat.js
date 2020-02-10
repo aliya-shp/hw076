@@ -2,9 +2,9 @@ import React, {Component} from 'react';
 import {connect} from "react-redux";
 
 import {createMessage, fetchMessages, updateMessage, updateAuthor} from "../../store/actions";
+import AppTitle from "../../components/AppTitle/AppTitle";
 import MessageForm from "../../components/MessageForm/MessageForm";
 import ListOfMessages from "../../components/ListOfMessages/ListOfMessages";
-import AppTitle from "../../components/AppTitle/AppTitle";
 
 class Chat extends Component {
     componentDidMount() {
