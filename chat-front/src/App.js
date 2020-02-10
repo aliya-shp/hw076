@@ -1,12 +1,16 @@
 import React from 'react';
-import './App.css';
+import {Route, Switch} from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
+import AppTitle from './components/AppTitle/AppTitle';
+import Chat from './containers/Chat/Chat';
+import MessageForm from './components/MessageForm/MessageForm';
 
-    </div>
-  );
-}
+const App = () => (
+    <Switch>
+      <Route path="/messages" exact component={AppTitle}/>
+      <Route path="/messages" exact component={Chat}/>
+      <Route path="/messages" exact component={MessageForm}/>
+    </Switch>
+);
 
 export default App;
