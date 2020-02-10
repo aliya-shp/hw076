@@ -1,19 +1,39 @@
 const express = require('express');
-const fs = require('fs');
+const nanoid = require('nanoid');
+
+const fileDb = require('../fileDb');
 
 const router = express.Router();
 
-const path = './messages';
-
-const data = [];
-
 router.get('/', (req, res) => {
-    res.send('List of messages will be here')
+    const dateTime = req.query.dateTime;
+    let messages;
+    if (dateTime) {
+        messages = fileDb.getMessages(dateTime);
+    } else {
+        messages = fileDb.getMessages();
+    }
+
+    res.send(messages);
 });
 
+// router.get('/:datetime', (req, res) => {
+//     console.log(req.params.id);
+//     res.send('OK');
+// });
+
 router.post('/', (req, res) => {
+    const {message, author} = req.body;
+
+    if (!message || !author) {
+        const errorMessage = JSON.stringify({"error": "Author and message must be present in the request"});
+        return res.status(404).send(errorMessage);
+    }
+    req.body.id = nanoid();
+    req.body.dateTime = (new Date()).toISOString();
     console.log(req.body);
-    res.send('Message will be here')
+    fileDb.addMessage(req.body);
+    res.send('OK');
 });
 
 module.exports = router;

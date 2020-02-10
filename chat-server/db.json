@@ -1,0 +1,27 @@
+[
+  {
+    "id": "fyjtx6dXbaEDKhaDSYsX8",
+    "message": "some text",
+    "author": "some stranger",
+    "datetime": "some datetime",
+    "dateTime": "2020-02-10T10:08:42.765Z"
+  },
+  {
+    "message": "some text",
+    "author": "some stranger",
+    "id": "ANfntF9iwkORZiRjm0VsS",
+    "dateTime": "2020-02-10T10:10:15.447Z"
+  },
+  {
+    "message": "text",
+    "author": "stranger",
+    "id": "00W84rS8kPN-NybY9nPVs",
+    "dateTime": "2020-02-10T10:11:07.175Z"
+  },
+  {
+    "message": "text",
+    "author": "some person",
+    "id": "Y0wo6SzB_Tjkwsmiq4z92",
+    "dateTime": "2020-02-10T10:17:20.857Z"
+  }
+]
