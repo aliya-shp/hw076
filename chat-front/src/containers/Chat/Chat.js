@@ -4,6 +4,7 @@ import {connect} from "react-redux";
 import {createMessage, fetchMessages, updateMessage, updateAuthor} from "../../store/actions";
 import MessageForm from "../../components/MessageForm/MessageForm";
 import ListOfMessages from "../../components/ListOfMessages/ListOfMessages";
+import AppTitle from "../../components/AppTitle/AppTitle";
 
 class Chat extends Component {
     componentDidMount() {
@@ -30,7 +31,7 @@ class Chat extends Component {
     render() {
         return (
             <div className="container container-fluid text-center">
-                { this.props.error && <p style={{color: 'red'}}>{this.props.error}</p>}
+                <AppTitle/>
                 <MessageForm message={this.props.message.message}
                              author={this.props.message.author}
                              sendMessage={()=>this.sendMessage()}
