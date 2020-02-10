@@ -35,8 +35,8 @@ class Chat extends Component {
                 <MessageForm message={this.props.message.message}
                              author={this.props.message.author}
                              sendMessage={()=>this.sendMessage()}
-                             changeMessage={(e)=>this.updateMessage(e.target.value)}
-                             changeAuthor={(e)=>this.updateAuthor(e.target.value)}/>
+                             updateMessage={(e)=>this.updateMessage(e.target.value)}
+                             updateAuthor={(e)=>this.updateAuthor(e.target.value)}/>
                 <ListOfMessages messages={this.props.messages}/>
             </div>
         );
